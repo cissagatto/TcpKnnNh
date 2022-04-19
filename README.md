@@ -11,7 +11,9 @@ Click [here](https://cometa.ujaen.es/datasets/) to go to the cometa page
 Click [here](https://www.4shared.com/s/dYpGZWzjQ) to download
 
 ## Computed Partitions
+
 Jaccard, Cosine, Roger-Tanimoto and Russel-Rao: Click [here](https://www.4shared.com/s/dS5g0oJPb) to download
+
 Random: Click [here](https://www.4shared.com/s/dhsxOnLwH) to download
 
 ## Conda Environment
