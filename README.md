@@ -1,8 +1,8 @@
-# TCP-KNN-NH-ECC
-This code is part of my doctoral research at PPG-CC/DC/UFSCar. Test Hybrid Partitions - Sparsification Knn - Non Hierarchical Comunity Detection Methods with ECC.
+# TCP-KNN-N
+This code is part of my doctoral research at PPG-CC/DC/UFSCar. Test Hybrid Partitions - Sparsification Knn - Non Hierarchical Comunity Detection Methods
 
 ## How to cite 
-@misc{Gatto2021, author = {Gatto, E. C.}, title = {Test Hybrid Partitions using Communities Detection Methods for Multilabell Classification with ECC}, year = {2022}, publisher = {GitHub}, journal = {GitHub repository}, howpublished = {\url{https://github.com/cissagatto/TCP-KNN-H-ECC}}}
+@misc{Gatto2021, author = {Gatto, E. C.}, title = {Test Hybrid Partitions using Communities Detection Methods for Multilabell Classification}, year = {2022}, publisher = {GitHub}, journal = {GitHub repository}, howpublished = {\url{https://github.com/cissagatto/TCP-KNN-H}}}
 
 ## Multi-Label Datasets (original)
 Click [here](https://cometa.ujaen.es/datasets/) to go to the cometa page
@@ -34,7 +34,7 @@ This source code consists of an R project for R Studio and the following R scrip
 1. libraries.R
 2. utils.R
 3. validate.R
-4. testECC.R
+4. testClus.R
 5. run.R
 6. tcp.R
 
@@ -83,7 +83,7 @@ Then the experiment was executed in a cluster at UFSCar.
 
 
 ## RUN
-To run the code, open the terminal, enter the */TCP-KNN-NH-ECC/R/* folder, and type
+To run the code, open the terminal, enter the */TCP-KNN-NH/R/* folder, and type
 
 ```
 Rscript tcp.R [number_dataset] [number_cores] [number_folds] [similarity] [name_folder_results]
