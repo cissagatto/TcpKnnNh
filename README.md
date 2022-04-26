@@ -1,8 +1,8 @@
-# TCP-KNN-NH
-This code is part of my doctoral research at PPG-CC/DC/UFSCar. Test Hybrid Partitions - Sparsification Knn - Non Hierarchical Comunity Detection Methods.
+# TCP-KNN-NH-ECC
+This code is part of my doctoral research at PPG-CC/DC/UFSCar. Test Hybrid Partitions - Sparsification Knn - Non Hierarchical Comunity Detection Methods with ECC.
 
 ## How to cite 
-@misc{Gatto2021, author = {Gatto, E. C.}, title = {Test Hybrid Partitions using Communities Detection Methods for Multilabell Classification}, year = {2022}, publisher = {GitHub}, journal = {GitHub repository}, howpublished = {\url{https://github.com/cissagatto/TCP-KNN-H}}}
+@misc{Gatto2021, author = {Gatto, E. C.}, title = {Test Hybrid Partitions using Communities Detection Methods for Multilabell Classification with ECC}, year = {2022}, publisher = {GitHub}, journal = {GitHub repository}, howpublished = {\url{https://github.com/cissagatto/TCP-KNN-H-ECC}}}
 
 ## Multi-Label Datasets (original)
 Click [here](https://cometa.ujaen.es/datasets/) to go to the cometa page
@@ -34,7 +34,7 @@ This source code consists of an R project for R Studio and the following R scrip
 1. libraries.R
 2. utils.R
 3. validate.R
-4. testClus.R
+4. testECC.R
 5. run.R
 6. tcp.R
 
@@ -45,16 +45,13 @@ This source code consists of an R project for R Studio and the following R scrip
 This code is executed in X-fold cross-validation. First, you have to obtain the X-fold cross-validation files using this [code]( https://github.com/cissagatto/CrossValidationMultiLabel). All the instructions to use the code are in the Github. After that, put the results generated in the *Datasets* folder in this project as "tar.gz".
 
 ### Step-2
-Confirms if the folder *utils* contains the following files: *Clus.jar*, *R_csv_2_arff.jar*, and *weka.jar*, and also the folder *lib* with *commons-math-1.0.jar*, *jgap.jar*, *weka.jar* and *Clus.jar.* Without these jars, the code not runs. 
-
-### Step-3
 A file called _datasets_2022.csv_ must be in the *root project* folder. This file is used to read information about the datasets and they are used in the code. All 74 datasets available in *Cometa* are in this file. If you want to use another dataset, please, add the following information about the dataset in the file:
 
 _Id, Name, Domain, Labels, Instances, Attributes, Inputs, Labelsets, Single, Max freq, Card, Dens, MeanIR, Scumble, TCS, AttStart, AttEnd, LabelStart, LabelEnd, xn, yn, gridn_
 
 The *Id* of the dataset is a mandatory parameter in the command line to run all code. The fields are used in a lot of internal functions. Please, make sure that this information is available before running the code. *xn* and *yn* correspond to a dimension of the quadrangular map for kohonen, and *gridn* is (xn * yn). Example: xn = 4, yn = 4, gridn = 16.
 
-### Step-4
+### Step-3
 To run this code you will need the partitions generated from this [code](https://github.com/cissagatto/GeneratePartitionsCommunities). Please, read the instructions there.
 
 ## Software Requirements
@@ -75,11 +72,9 @@ Topology: 6-Core | model: Intel Core i7-10750H | bits: 64 | type: MT MCP | L2 ca
 
 Then the experiment was executed in a cluster at UFSCar.
 
-**Important: we used the CLUS classifier in this experiment. This implies generating all physical ARFF training, validating, and testing files. Our code generates the files first in RAM and then saves them to the HD. However, to avoid memory problems, immediately after saving to HD, the files are validated (or tested) and then deleted. Even so, make sure you have enough space on your HD and RAM for this procedure.**
-
 
 ## RUN
-To run the code, open the terminal, enter the */BuildDataFrameGraphMLC/R/* folder, and type
+To run the code, open the terminal, enter the */TCP-KNN-NH-ECC/R/* folder, and type
 
 ```
 Rscript tcp.R [number_dataset] [number_cores] [number_folds] [similarity] [name_folder_results]
