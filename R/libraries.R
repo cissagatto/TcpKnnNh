@@ -17,8 +17,8 @@
 #                                                                                                #
 ##################################################################################################
 
-FolderRoot = "~/TCP-KNN-NH/"
-FolderScripts = paste(FolderRoot, "/R/", sep="")
+FolderRoot = "~/TCP-KNN-NH-Clus"
+FolderScripts = "~/TCP-KNN-NH-Clus/R"
 
 
 
@@ -37,7 +37,6 @@ library("utiml", quietly = TRUE)
 library("foreach", quietly = TRUE)
 library("doParallel", quietly = TRUE)
 library("cluster", quietly = TRUE)
-library("cccd", quietly = TRUE)
 library("pvclust", quietly = TRUE)
 library("factoextra", quietly = TRUE)
 

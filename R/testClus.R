@@ -17,9 +17,8 @@
 #                                                                                                #
 ##################################################################################################
 
-
-FolderRoot = "~/TCP-KNN-NH/"
-FolderScripts = paste(FolderRoot, "/R/", sep="")
+FolderRoot = "~/TCP-KNN-NH-Clus"
+FolderScripts = "~/TCP-KNN-NH-Clus/R"
 
 
 ##################################################################################################
@@ -33,14 +32,15 @@ buildAndTest2 <- function(ds, dataset_name, number_dataset,
                          number_folds, number_cores,
                          folderResults, diretorios){
 
-  if(interactive()==TRUE){ flush.console() }
+  FolderRoot = "~/TCP-KNN-NH-Clus"
+  FolderScripts = "~/TCP-KNN-NH-Clus/R"
 
   diretorios = diretorios
 
   #cat("\nFrom 1 to 10 folds!")
   f = 1
   buildParalel <- foreach(f = 1:number_folds) %dopar%{
-  #while(f<=number_folds){
+  # while(f<=number_folds){
 
     cat("\n#=========================================================")
     cat("\n#Fold: ", f)
@@ -48,8 +48,8 @@ buildAndTest2 <- function(ds, dataset_name, number_dataset,
 
     diretorios = diretorios
 
-    FolderRoot = "~/TCP-KNN-NH/"
-    FolderScripts = paste(FolderRoot, "/R/", sep="")
+    FolderRoot = "~/TCP-KNN-NH-Clus"
+    FolderScripts = "~/TCP-KNN-NH-Clus/R"
 
     setwd(FolderScripts)
     source("utils.R")
@@ -413,7 +413,7 @@ buildAndTest2 <- function(ds, dataset_name, number_dataset,
         gc()
       } # end KNN
 
-    #f = f + 1
+    # f = f + 1
     gc()
   } # fim do for each
 
@@ -453,8 +453,8 @@ juntaResultados2 <- function(ds, dataset_name, number_dataset,
     cat("\n#Fold: ", f)
     cat("\n#=========================================================")
 
-    FolderRoot = "~/TCP-KNN-NH/"
-    FolderScripts = paste(FolderRoot, "/R/", sep="")
+    FolderRoot = "~/TCP-KNN-NH-Clus"
+    FolderScripts = "~/TCP-KNN-NH-Clus/R"
 
     setwd(FolderScripts)
     source("utils.R")
@@ -596,9 +596,8 @@ avaliaTest2 <- function(ds, dataset_name, number_dataset,
     cat("\n#=========================================================")
 
     folders = list()
-
-    FolderRoot = "~/TCP-KNN-NH/"
-    FolderScripts = paste(FolderRoot, "/R/", sep="")
+    FolderRoot = "~/TCP-KNN-NH-Clus"
+    FolderScripts = "~/TCP-KNN-NH-Clus/R"
 
     setwd(FolderScripts)
     source("utils.R")
@@ -731,6 +730,9 @@ juntaAvaliacoes2 <- function(ds, dataset_name, number_dataset,
                "macro-F1","macro-precision","macro-recall","margin-loss","micro-AUC","micro-F1",
                "micro-precision","micro-recall","mlp","one-error","precision","ranking-loss",
                "recall","subset-accuracy","wlp")
+
+  FolderRoot = "~/TCP-KNN-NH-Clus"
+  FolderScripts = "~/TCP-KNN-NH-Clus/R"
 
   # from fold = 1 to number_folders
   f = 1
